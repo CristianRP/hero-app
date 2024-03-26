@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+
+import { HeroApp } from './HeroApp'
 
 import './styles.css'
-import { HeroApp } from './HeroApp'
-import { BrowserRouter } from 'react-router-dom'
+import 'animate.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
