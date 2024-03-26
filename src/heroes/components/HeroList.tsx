@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { HeroCard } from '.';
 import { Publisher, getHeroesByPublisher } from '../helpers'
 
@@ -7,7 +8,7 @@ type HeroListProps = {
 
 export const HeroList = ({ publisher }: HeroListProps) => {
 
-  const heroes = getHeroesByPublisher( publisher );
+  const heroes = useMemo(() => getHeroesByPublisher( publisher ), [publisher]);
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
