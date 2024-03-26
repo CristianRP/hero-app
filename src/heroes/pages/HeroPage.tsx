@@ -20,7 +20,7 @@ export const HeroPage = () => {
   return (
     <div className='flex flex-wrap mt-5'>
       <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
-        <img src={`/assets/heroes/${ id }.jpg`} alt={ hero.superhero } className='rounded-lg' />
+        <img src={`/assets/heroes/${ id }.jpg`} alt={ hero.superhero } className='rounded-lg animate__animated animate__fadeInLeft' />
       </div>
 
       <div className="w-full md:w-1/2 lg:w-2/3 xl:w-3/4 px-4">

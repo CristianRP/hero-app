@@ -18,7 +18,7 @@ export const HeroCard = ({
   const heroImageUrl = `/assets/heroes/${id}.jpg`;
 
   return (
-    <div className="w-full md:w-full lg:w-1/3 xl:w-1/4 px-2 mb-4">
+    <div className="w-full md:w-full lg:w-1/3 xl:w-1/4 px-2 mb-4 animate__animated animate__fadeIn">
       <div className="bg-white rounded-lg overflow-hidden shadow-md">
         <div className="flex flex-row">
           <div className="w-1/3">
