@@ -61,11 +61,11 @@ export const SearchPage = () => {
           {
             q === ''
             ?  
-              <div className="bg-blue-100 rounded-md border border-blue-500 text-blue-700 p-4 mb-4" role='alert'>
+              <div className="bg-blue-100 rounded-md border border-blue-500 text-blue-700 p-4 mb-4 animate__animated animate__fadeIn" role='alert'>
                 Search a hero
               </div>
             : (heroes.length === 0) &&
-              <div className="bg-red-100 rounded-md border border-red-500 text-red-700 p-4 mb-4" role='alert'>
+              <div className="bg-red-100 rounded-md border border-red-500 text-red-700 p-4 mb-4 animate__animated animate__fadeIn" role='alert'>
                 No hero with <b>{ q }</b>
               </div>
           }
