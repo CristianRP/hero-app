@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 const navigation = [
   { name: 'Marvel', to: 'marvel' },
   { name: 'DC', to: 'dc' },
-  { name: 'Logout', to: 'logout' },
+  { name: 'Search', to: 'search' },
   { name: 'Login', to: 'login' },
 ]
 

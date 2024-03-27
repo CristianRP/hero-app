@@ -1,9 +1,5 @@
-import { heroes } from '../data/heroes';
+import { Publisher, heroes } from '../data/heroes';
 
-type Marvel = 'Marvel Comics';
-type DC = 'DC Comics';
-
-export type Publisher = Marvel | DC;
 
 export const getHeroesByPublisher = ( publisher: Publisher ) => {
 

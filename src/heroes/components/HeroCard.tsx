@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
+import { Hero } from '../data/heroes';
 
-const CharactersByHero = ({ alter_ego, characters }) => {
+type CharactersByHeroType = {
+  alter_ego: string;
+  characters: string;
+}
+
+const CharactersByHero = ({ alter_ego, characters }: CharactersByHeroType) => {
   return (alter_ego === characters)
     ? <></>
     : <p>{ characters }</p>;
@@ -9,11 +15,10 @@ const CharactersByHero = ({ alter_ego, characters }) => {
 export const HeroCard = ({
   id,
   superhero,
-  publisher,
   alter_ego,
   first_appearance,
   characters,
-}) => {
+}: Hero) => {
 
   const heroImageUrl = `/assets/heroes/${id}.jpg`;
 

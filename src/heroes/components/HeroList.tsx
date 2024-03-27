@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { HeroCard } from '.';
-import { Publisher, getHeroesByPublisher } from '../helpers'
+import { getHeroesByPublisher } from '../helpers'
+import { Publisher } from '../data/heroes';
 
 type HeroListProps = {
   publisher: Publisher;
