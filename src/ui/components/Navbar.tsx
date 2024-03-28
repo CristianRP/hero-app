@@ -1,7 +1,8 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../auth'
 
 const navigation = [
   { name: 'Marvel', to: 'marvel' },
@@ -16,10 +17,12 @@ function classNames(...classes: string[]) {
 
 export function Navbar() {
 
+  const { user, logout } = useContext( AuthContext );
   const navigate = useNavigate();
 
   const onLogout = () => {
     console.log('logout');
+    logout();
     navigate('/login', {
       replace: true
     });
@@ -69,6 +72,7 @@ export function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <p className='text-white mr-2'>{ user?.name }</p>
                 <button
                   type="button"
                   className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
