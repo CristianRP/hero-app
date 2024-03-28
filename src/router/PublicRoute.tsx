@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { AuthContext } from '../auth'
-import { Navigate } from 'react-router-dom';
+import { Navigate, RoutesProps } from 'react-router-dom';
 
-export const PublicRoute = ({ children }) => {
+export const PublicRoute = ({ children }: RoutesProps) => {
   const { logged } = useContext( AuthContext );
 
   return logged

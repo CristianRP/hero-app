@@ -1,20 +1,32 @@
 import { useReducer } from 'react'
-import { AuthContext } from './AuthContext'
-import { authReducer } from './authReducer'
+import { AuthContext, State } from './AuthContext'
+import { Action, authReducer } from './authReducer'
 import { types } from '../types/types'
+import { RoutesProps } from 'react-router-dom'
 
-const init = () => {
+type DispatchAction = (action: Action) => void;
+
+const initialState: State = {
+  logged: false,
+  login: () => {},
+  logout: () => {},
+};
+
+type AuthState = State | object;
+
+const init = (): State => {
   const user = JSON.parse(localStorage.getItem('user')!);
 
   return {
+    ...initialState,
     logged: !!user,
-    user
-  }
+    user: user || null,
+  } || undefined
 }
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }:RoutesProps ) => {
 
-  const [ authState, dispatch ] = useReducer( authReducer, {}, init );
+  const [ authState, dispatch ]: [AuthState, DispatchAction] = useReducer( authReducer, initialState, init );
 
   const login = ( name: string ) => {
     const user = {
@@ -40,7 +52,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ ...authState, login, logout }}>
+    <AuthContext.Provider value={{ ...authState, logged: (authState as State).logged, login, logout }}>
       { children }
     </AuthContext.Provider>
   )
