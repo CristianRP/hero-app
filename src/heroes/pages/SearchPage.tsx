@@ -36,7 +36,7 @@ export const SearchPage = () => {
         <div className="w-full md:w-4/12">
           <h4 className='text-xl font-semibold'>Searching</h4>
           <hr className='my-2' />
-          <form className='flex flex-col'>
+          <form className='flex flex-col' onSubmit={ onSearchSubmit }>
             <input
               type="text"
               placeholder='Search a hero'
@@ -48,7 +48,6 @@ export const SearchPage = () => {
             <button
               type='submit'
               className='w-1/3 mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 focus:ring focus:ring-blue-300'
-              onClick={ onSearchSubmit }
               >
               Search
             </button>
